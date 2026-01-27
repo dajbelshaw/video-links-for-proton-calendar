@@ -6,12 +6,12 @@
 const BUTTON_CONTAINER_ID = 'proton-alt-video-buttons';
 const LOG_PREFIX = '[Proton Alt Video]';
 
-// Service configurations with colors
+// Service configurations with colors (Proton-inspired palette)
 const SERVICE_STYLES = {
-  jitsi: { color: '#1d788f', label: 'Add Jitsi' },
-  bbb: { color: '#226699', label: 'Add BBB' },
-  whereby: { color: '#4a154b', label: 'Add Whereby' },
-  custom: { color: '#666666', label: 'Add Meeting' }
+  jitsi: { color: '#6D4AFF', label: 'Add Jitsi' },      // Proton purple
+  bbb: { color: '#5252CC', label: 'Add BBB' },          // Deeper purple-blue
+  whereby: { color: '#7C4DFF', label: 'Add Whereby' },  // Lighter purple
+  custom: { color: '#8B8B9A', label: 'Add Meeting' }    // Proton gray
 };
 
 /**
