@@ -1,6 +1,6 @@
 {
   "name": "proton-calendar-video-links",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Add video conferencing links to Proton Calendar events",
   "scripts": {
     "build": "node build.js",

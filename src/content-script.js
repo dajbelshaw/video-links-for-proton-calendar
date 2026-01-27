@@ -304,7 +304,7 @@ async function injectVideoButtons() {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 8px;
+    margin: 8px 12px 8px 0;
     padding: 8px 0;
   `;
 
