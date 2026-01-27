@@ -1,0 +1,27 @@
+{
+  "name": "proton-calendar-video-links",
+  "version": "1.1.0",
+  "description": "Add video conferencing links to Proton Calendar events",
+  "scripts": {
+    "build": "node build.js",
+    "build:chrome": "node build.js chrome",
+    "build:firefox": "node build.js firefox",
+    "clean": "node build.js --clean",
+    "package": "node build.js --clean && cd dist/chrome && zip -r ../chrome.zip . && cd ../firefox && zip -r ../firefox.zip ."
+  },
+  "keywords": [
+    "proton",
+    "calendar",
+    "video",
+    "jitsi",
+    "bigbluebutton",
+    "whereby",
+    "browser-extension"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}

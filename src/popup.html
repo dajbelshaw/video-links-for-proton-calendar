@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proton Calendar Video Links</title>
+  <style>
+    body {
+      width: 320px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+    }
+    h2 {
+      font-size: 16px;
+      margin: 0 0 12px 0;
+      color: #222;
+    }
+    .info {
+      background-color: #e8f4f8;
+      border-left: 3px solid #1d788f;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #333;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .service-section {
+      background: white;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #e0e0e0;
+    }
+    .service-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .service-header input[type="checkbox"] {
+      margin: 0;
+    }
+    .service-header label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+    }
+    .service-config {
+      margin-top: 8px;
+      padding-left: 24px;
+    }
+    .service-config.hidden {
+      display: none;
+    }
+    .setting {
+      margin-bottom: 10px;
+    }
+    .setting label {
+      display: block;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #1d788f;
+      box-shadow: 0 0 0 3px rgba(29, 120, 143, 0.1);
+    }
+    .hint {
+      color: #999;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+    button {
+      background-color: #1d788f;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 500;
+    }
+    button:hover {
+      background-color: #175d72;
+    }
+    .status {
+      font-size: 12px;
+      color: #27ae60;
+      margin-top: 8px;
+      text-align: center;
+    }
+    .color-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .color-jitsi { background-color: #1d788f; }
+    .color-bbb { background-color: #226699; }
+    .color-whereby { background-color: #4a154b; }
+    .color-custom { background-color: #666; }
+  </style>
+</head>
+<body>
+  <h2>Proton Calendar Video Links</h2>
+
+  <div class="info">
+    Configure which video services appear as buttons when creating calendar events.
+  </div>
+
+  <!-- Jitsi -->
+  <div class="service-section">
+    <div class="service-header">
+      <input type="checkbox" id="enable-jitsi" checked>
+      <span class="color-dot color-jitsi"></span>
+      <label for="enable-jitsi">Jitsi Meet</label>
+    </div>
+    <div class="service-config" id="jitsi-config">
+      <div class="setting">
+        <label for="jitsi-domain">Server Domain</label>
+        <input type="text" id="jitsi-domain" placeholder="meet.jit.si" value="meet.jit.si">
+        <div class="hint">Public: meet.jit.si | Self-hosted: your-jitsi.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BigBlueButton -->
+  <div class="service-section">
+    <div class="service-header">
+      <input type="checkbox" id="enable-bbb">
+      <span class="color-dot color-bbb"></span>
+      <label for="enable-bbb">BigBlueButton</label>
+    </div>
+    <div class="service-config hidden" id="bbb-config">
+      <div class="setting">
+        <label for="bbb-url">BBB Server URL</label>
+        <input type="text" id="bbb-url" placeholder="https://bbb.example.com">
+        <div class="hint">Your organization's BBB server URL</div>
+      </div>
+      <div class="setting">
+        <label for="bbb-room">Default Room Name (optional)</label>
+        <input type="text" id="bbb-room" placeholder="my-meeting-room">
+        <div class="hint">Leave blank to auto-generate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Whereby -->
+  <div class="service-section">
+    <div class="service-header">
+      <input type="checkbox" id="enable-whereby">
+      <span class="color-dot color-whereby"></span>
+      <label for="enable-whereby">Whereby</label>
+    </div>
+    <div class="service-config hidden" id="whereby-config">
+      <div class="setting">
+        <label for="whereby-room">Your Whereby Room URL</label>
+        <input type="text" id="whereby-room" placeholder="https://whereby.com/your-room">
+        <div class="hint">Create a free room at whereby.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom -->
+  <div class="service-section">
+    <div class="service-header">
+      <input type="checkbox" id="enable-custom">
+      <span class="color-dot color-custom"></span>
+      <label for="enable-custom">Custom Service</label>
+    </div>
+    <div class="service-config hidden" id="custom-config">
+      <div class="setting">
+        <label for="custom-name">Button Label</label>
+        <input type="text" id="custom-name" placeholder="My Video Service">
+      </div>
+      <div class="setting">
+        <label for="custom-url">Meeting URL Template</label>
+        <input type="text" id="custom-url" placeholder="https://video.example.com/room/{random}">
+        <div class="hint">Use {random} for auto-generated room ID</div>
+      </div>
+    </div>
+  </div>
+
+  <button id="save-btn">Save Settings</button>
+  <div class="status" id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
