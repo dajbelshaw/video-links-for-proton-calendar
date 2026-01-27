@@ -2,6 +2,8 @@
 
 > **Experimental** - This extension is experimental and not affiliated with Proton AG. It may break at any time if Proton changes their calendar interface. Use at your own risk.
 
+![Screenshot of extension in action](screenshot.png)
+
 A browser extension that adds video conferencing buttons to Proton Calendar, allowing you to quickly insert meeting links from services other than Zoom.
 
 ## Features
@@ -20,6 +22,7 @@ When creating a calendar event in Proton Calendar, buttons appear near the locat
 **[Download the latest release here](https://github.com/dajbelshaw/proton-calendar-video-links/releases/latest)**
 
 Choose the file for your browser:
+
 - **Chrome, Edge, Brave, Opera, Vivaldi** → `proton-calendar-video-links-chrome-v*.zip`
 - **Firefox** → `proton-calendar-video-links-firefox-v*.zip`
 
@@ -72,6 +75,7 @@ Click the extension icon in your browser toolbar to open settings:
 ## Privacy
 
 This extension:
+
 - Only runs on `calendar.proton.me`
 - Stores your settings locally in your browser
 - Does not collect or send any data anywhere
@@ -80,15 +84,18 @@ This extension:
 ## Troubleshooting
 
 **The buttons don't appear:**
+
 - Make sure you're on `calendar.proton.me` (not the mobile app)
 - Try refreshing the page
 - Check that the extension is enabled in your browser's extensions page
 
 **The extension disappeared (Firefox):**
+
 - Firefox temporary add-ons are removed when the browser closes
 - You'll need to load it again using the steps above
 
 **Settings aren't saving:**
+
 - Make sure you click the "Save Settings" button after making changes
 
 ## For Developers
