@@ -13,50 +13,92 @@ A browser extension that adds video conferencing buttons to Proton Calendar, all
 
 When creating a calendar event in Proton Calendar, buttons appear near the location field. Click a button to instantly populate the location with a video meeting link.
 
-## Supported Browsers
-
-- Google Chrome / Chromium / Edge / Brave / Opera / Vivaldi
-- Mozilla Firefox
-
 ## Installation
 
-### From Source (Developer Mode)
+### Download
 
-#### Chrome / Chromium
+**[Download the latest release here](https://github.com/dajbelshaw/proton-calendar-video-links/releases/latest)**
 
-1. Clone this repository
-2. Run `node build.js chrome`
-3. Open `chrome://extensions`
-4. Enable **Developer mode**
-5. Click **Load unpacked**
-6. Select the `dist/chrome` folder
+Choose the file for your browser:
+- **Chrome, Edge, Brave, Opera, Vivaldi** → `proton-calendar-video-links-chrome-v*.zip`
+- **Firefox** → `proton-calendar-video-links-firefox-v*.zip`
 
-#### Firefox
+---
 
-1. Clone this repository
-2. Run `node build.js firefox`
-3. Open `about:debugging#/runtime/this-firefox`
-4. Click **Load Temporary Add-on**
-5. Select any file in the `dist/firefox` folder
+### Chrome / Edge / Brave / Opera / Vivaldi
 
-## Usage
+1. **Download** the Chrome zip file from the [releases page](https://github.com/dajbelshaw/proton-calendar-video-links/releases/latest)
+2. **Extract** the zip file to a folder on your computer (remember where you put it!)
+3. **Open your browser's extensions page:**
+   - Chrome: Type `chrome://extensions` in the address bar
+   - Edge: Type `edge://extensions` in the address bar
+   - Brave: Type `brave://extensions` in the address bar
+4. **Enable Developer Mode** - Look for a toggle switch in the top-right corner and turn it on
+5. **Click "Load unpacked"** - A button should appear after enabling Developer Mode
+6. **Select the folder** you extracted in step 2
+7. **Done!** You should see the extension icon in your toolbar
+
+---
+
+### Firefox
+
+1. **Download** the Firefox zip file from the [releases page](https://github.com/dajbelshaw/proton-calendar-video-links/releases/latest)
+2. **Open Firefox's debugging page:** Type `about:debugging#/runtime/this-firefox` in the address bar
+3. **Click "Load Temporary Add-on..."**
+4. **Select the zip file** you downloaded (no need to extract it)
+5. **Done!** You should see the extension icon in your toolbar
+
+> **Note for Firefox users:** Temporary add-ons are removed when you close Firefox. You'll need to repeat these steps each time you restart the browser. For a permanent installation, the extension would need to be signed by Mozilla.
+
+---
+
+## How to Use
 
 1. Go to [Proton Calendar](https://calendar.proton.me)
-2. Create a new event (click on a time slot)
-3. Look for the video service buttons below the location field
-4. Click a button to add a meeting link
+2. Create a new event (click on any time slot)
+3. Look for the coloured video service buttons below the location field
+4. Click a button to add a meeting link to your event
 
-### Configuration
+### Configuring Your Services
 
-Click the extension icon in your toolbar to configure:
+Click the extension icon in your browser toolbar to open settings:
 
-- **Enable/disable services** - Toggle which buttons appear
-- **Jitsi domain** - Use the public `meet.jit.si` or your self-hosted instance
-- **BBB server URL** - Your organization's BigBlueButton server
-- **Whereby room** - Your personal Whereby room URL
-- **Custom service** - Define your own service with a URL template (use `{random}` for auto-generated room IDs)
+- **Enable/disable services** - Choose which buttons appear
+- **Jitsi domain** - Use the public `meet.jit.si` or enter your own self-hosted server
+- **BBB server URL** - Enter your organisation's BigBlueButton server address
+- **Whereby room** - Enter your personal Whereby room URL
+- **Custom service** - Set up any other video service (use `{random}` in the URL for auto-generated room IDs)
 
-## Development
+## Privacy
+
+This extension:
+- Only runs on `calendar.proton.me`
+- Stores your settings locally in your browser
+- Does not collect or send any data anywhere
+- Generates meeting URLs entirely on your device
+
+## Troubleshooting
+
+**The buttons don't appear:**
+- Make sure you're on `calendar.proton.me` (not the mobile app)
+- Try refreshing the page
+- Check that the extension is enabled in your browser's extensions page
+
+**The extension disappeared (Firefox):**
+- Firefox temporary add-ons are removed when the browser closes
+- You'll need to load it again using the steps above
+
+**Settings aren't saving:**
+- Make sure you click the "Save Settings" button after making changes
+
+## For Developers
+
+See the [Development](#development) section below if you want to build from source or contribute.
+
+<details>
+<summary><strong>Development</strong></summary>
+
+### Building from Source
 
 ```bash
 git clone https://github.com/dajbelshaw/proton-calendar-video-links.git
@@ -69,7 +111,7 @@ node build.js
 node build.js chrome
 node build.js firefox
 
-# Clean build
+# Clean and rebuild
 node build.js --clean
 ```
 
@@ -91,18 +133,7 @@ proton-calendar-video-links/
 └── build.js                # Build script
 ```
 
-## Privacy
-
-This extension:
-- Only runs on `calendar.proton.me`
-- Stores settings locally in browser storage
-- Does not collect or transmit any data
-- Generates meeting URLs locally without external API calls
-
-## Permissions
-
-- **storage** - Save your video service preferences
-- **Host permission for calendar.proton.me** - Inject video buttons into the calendar
+</details>
 
 ## License
 
