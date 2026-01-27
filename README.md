@@ -2,7 +2,7 @@
 
 > **Experimental** - This extension is experimental and not affiliated with Proton AG. It may break at any time if Proton changes their calendar interface. Use at your own risk.
 
-![Screenshot of extension in action](screenshot.png)
+![Screenshot of extension in action](screenshot-extension.png)
 
 A browser extension that adds video conferencing buttons to Proton Calendar, allowing you to quickly insert meeting links from services other than Zoom.
 
