@@ -73,7 +73,9 @@ Click the extension icon in your browser toolbar to open settings:
 
 ## Privacy
 
-This extension:
+This extension does not collect, transmit, or sell any personal data. See the full [Privacy Policy](PRIVACY.md) for details.
+
+In short:
 
 - Only runs on `calendar.proton.me`
 - Stores your settings locally in your browser
