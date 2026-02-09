@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Proton Calendar Video Links",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Add Jitsi, BigBlueButton, Whereby, or custom video conferencing links to Proton Calendar events",
   "permissions": ["storage"],
   "host_permissions": ["*://calendar.proton.me/*"],
@@ -24,7 +24,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "proton-calendar-video@extension",
-      "strict_min_version": "109.0"
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }

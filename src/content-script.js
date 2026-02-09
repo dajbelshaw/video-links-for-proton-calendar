@@ -78,8 +78,8 @@ function findLocationField() {
   for (const label of labels) {
     if (label.textContent.trim().toLowerCase() === 'location') {
       const input = label.parentElement?.querySelector('input') ||
-                    label.nextElementSibling?.querySelector('input') ||
-                    label.closest('div')?.querySelector('input');
+        label.nextElementSibling?.querySelector('input') ||
+        label.closest('div')?.querySelector('input');
       if (input) return input;
     }
   }
@@ -116,7 +116,14 @@ function setFieldValue(field, value) {
   if (!field) return false;
 
   if (field.contentEditable === 'true') {
-    field.innerHTML = value;
+    // Clear existing content
+    while (field.firstChild) {
+      field.removeChild(field.firstChild);
+    }
+
+    // Insert as plain text, not HTML
+    field.appendChild(document.createTextNode(value));
+
     field.dispatchEvent(new Event('input', { bubbles: true }));
     return true;
   }
@@ -179,7 +186,9 @@ function createServiceButton(service, settings, locationField, descriptionField)
     }
 
     if (descriptionField && descriptionField.value === '') {
-      const serviceName = service === 'custom' ? settings.customName : service.charAt(0).toUpperCase() + service.slice(1);
+      const serviceName = service === 'custom'
+        ? settings.customName
+        : service.charAt(0).toUpperCase() + service.slice(1);
       setFieldValue(descriptionField, `Join video call: ${url}`);
     }
 
@@ -336,9 +345,11 @@ async function injectVideoButtons() {
   if (insertionPoint && insertionPoint.parentElement) {
     insertionPoint.parentElement.insertBefore(container, insertionPoint.nextSibling);
     console.log(`${LOG_PREFIX} Buttons injected successfully`);
-  } else {
+  } else if (locationField.parentElement) {
     locationField.parentElement.appendChild(container);
     console.log(`${LOG_PREFIX} Buttons injected (fallback location)`);
+  } else {
+    console.log(`${LOG_PREFIX} Could not find insertion point for buttons`);
   }
 }
 
