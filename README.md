@@ -1,10 +1,10 @@
-# Proton Calendar Video Links
+# Video Links for Proton Calendar
 
-> **Experimental** - This extension is experimental and not affiliated with Proton AG. It may break at any time if Proton changes their calendar interface. Use at your own risk.
+> **Experimental** - This extension is not affiliated with or endorsed by Proton AG. It may break at any time if Proton changes their calendar interface. Use at your own risk.
+
+A browser extension for [Proton Calendar](https://calendar.proton.me) (the web app at `calendar.proton.me`) that adds one-click buttons to insert video conferencing links from **Jitsi Meet**, **BigBlueButton**, **Whereby**, or a **custom service** directly into your calendar events.
 
 ![Screenshot of extension in action](screenshot-extension.png)
-
-A browser extension that adds video conferencing buttons to Proton Calendar, allowing you to quickly insert meeting links from services other than Zoom.
 
 ## Features
 
@@ -12,8 +12,6 @@ A browser extension that adds video conferencing buttons to Proton Calendar, all
 - **BigBlueButton** - Connect to your organization's BBB server
 - **Whereby** - Use your persistent Whereby room URL
 - **Custom Service** - Add any video service with a URL template
-
-When creating a calendar event in Proton Calendar, buttons appear near the location field. Click a button to instantly populate the location with a video meeting link.
 
 ## Installation
 
@@ -23,8 +21,8 @@ When creating a calendar event in Proton Calendar, buttons appear near the locat
 
 Choose the file for your browser:
 
-- **Chrome, Edge, Brave, Opera, Vivaldi** → `proton-calendar-video-links-chrome-v*.zip`
-- **Firefox** → `proton-calendar-video-links-firefox-v*.zip`
+- **Chrome, Edge, Brave, Opera, Vivaldi** → `chrome-v*.zip`
+- **Firefox** → `firefox-v*.zip`
 
 ---
 
@@ -57,16 +55,17 @@ Choose the file for your browser:
 
 ## How to Use
 
-1. Go to [Proton Calendar](https://calendar.proton.me)
-2. Create a new event (click on any time slot)
-3. Look for the coloured video service buttons below the location field
-4. Click a button to add a meeting link to your event
+1. **Open Proton Calendar** in your browser at [calendar.proton.me](https://calendar.proton.me) and create or edit an event.
+2. **Click a video service button** (e.g. "Add Jitsi") that appears below the location field. A unique meeting link is generated and inserted into the event's location and description automatically.
+3. **Save the event** — the meeting link is now part of the invite for all participants.
+
+The screenshot above shows the result: the "Add Jitsi" button has inserted a Jitsi Meet link into both the location field and the event description.
 
 ### Configuring Your Services
 
 Click the extension icon in your browser toolbar to open settings:
 
-- **Enable/disable services** - Choose which buttons appear
+- **Enable/disable services** - Choose which buttons appear in the event form
 - **Jitsi domain** - Use the public `meet.jit.si` or enter your own self-hosted server
 - **BBB server URL** - Enter your organisation's BigBlueButton server address
 - **Whereby room** - Enter your personal Whereby room URL
