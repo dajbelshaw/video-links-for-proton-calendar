@@ -1,5 +1,5 @@
 {
-  "name": "proton-calendar-video-links",
+  "name": "video-links-for-proton-calendar",
   "version": "0.1.2",
   "description": "Add video conferencing links to Proton Calendar events",
   "scripts": {

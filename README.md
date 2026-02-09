@@ -17,7 +17,7 @@ A browser extension for [Proton Calendar](https://calendar.proton.me) (the web a
 
 ### Download
 
-**[Download the latest release here](https://github.com/dajbelshaw/proton-calendar-video-links/releases/latest)**
+**[Download the latest release here](https://github.com/dajbelshaw/video-links-for-proton-calendar/releases/latest)**
 
 Choose the file for your browser:
 
@@ -28,7 +28,7 @@ Choose the file for your browser:
 
 ### Chrome / Edge / Brave / Opera / Vivaldi
 
-1. **Download** the Chrome zip file from the [releases page](https://github.com/dajbelshaw/proton-calendar-video-links/releases/latest)
+1. **Download** the Chrome zip file from the [releases page](https://github.com/dajbelshaw/video-links-for-proton-calendar/releases/latest)
 2. **Extract** the zip file to a folder on your computer (remember where you put it!)
 3. **Open your browser's extensions page:**
    - Chrome: Type `chrome://extensions` in the address bar
@@ -43,7 +43,7 @@ Choose the file for your browser:
 
 ### Firefox
 
-1. **Download** the Firefox zip file from the [releases page](https://github.com/dajbelshaw/proton-calendar-video-links/releases/latest)
+1. **Download** the Firefox zip file from the [releases page](https://github.com/dajbelshaw/video-links-for-proton-calendar/releases/latest)
 2. **Open Firefox's debugging page:** Type `about:debugging#/runtime/this-firefox` in the address bar
 3. **Click "Load Temporary Add-on..."**
 4. **Select the zip file** you downloaded (no need to extract it)
@@ -107,8 +107,8 @@ See the [Development](#development) section below if you want to build from sour
 ### Building from Source
 
 ```bash
-git clone https://github.com/dajbelshaw/proton-calendar-video-links.git
-cd proton-calendar-video-links
+git clone https://github.com/dajbelshaw/video-links-for-proton-calendar.git
+cd video-links-for-proton-calendar
 
 # Build for all browsers
 node build.js
@@ -124,7 +124,7 @@ node build.js --clean
 ### Project Structure
 
 ```
-proton-calendar-video-links/
+video-links-for-proton-calendar/
 ├── src/                    # Shared source code
 │   ├── content-script.js   # Injected into calendar page
 │   ├── popup.html          # Settings UI
