@@ -107,6 +107,6 @@ if (browsers.length === 0) {
   process.exit(1);
 }
 
-console.log('Proton Calendar Video Links - Build\n');
+console.log('Video Links for Proton Calendar - Build\n');
 browsers.forEach(build);
 console.log('\nDone!');
