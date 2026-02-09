@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Proton Calendar Video Links",
+  "name": "Video Links for Proton Calendar",
   "version": "0.1.2",
   "description": "Add Jitsi, BigBlueButton, Whereby, or custom video conferencing links to Proton Calendar events",
   "permissions": ["storage"],
